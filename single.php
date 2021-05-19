@@ -32,6 +32,7 @@ get_template_part('template-parts/content', 'navbar');
 				<hr>
 				<button class="buyNowButton"><?php echo $buy_now?></button>
 				<!-- <h3 class="singleBuyNowText"><?php echo $buy_now?></h3> -->
+				<!-- <a href="?add-to-cart=<?php echo $loop->post->ID; ?>" rel="nofollow" data-product-id="<?php echo $loop->post->ID; ?>" class="btn btn-primary">Add to cart</a> -->
 				<hr>
 				<a class="socialIconAnchor" href="http://localhost:8888/art-page/"><i class="fas fa-long-arrow-alt-left fa-3x"></i></a>
 			</div>	

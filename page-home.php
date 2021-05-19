@@ -11,7 +11,7 @@ $hovered_text = get_field('hovered_text');
 
 <body>
   <div id="landing">
-    <a href="<?php echo get_page_link( get_page_by_title( 'Art Page' )->ID ); ?>">
+    <a href="<?php echo get_page_link( get_page_by_title( 'Shop' )->ID ); ?>">
         <img class="landingImage" src=<?php echo esc_url($landing_image['url']); ?> />
     </a>
     <h6 class="hiddenText"><?php echo $hovered_text;?></h6>

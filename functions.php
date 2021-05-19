@@ -113,6 +113,15 @@ if ( ! function_exists( 'charlie_salas_humara_theme_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'charlie_salas_humara_theme_setup' );
 
+// Remove the product description Title
+add_filter( 'woocommerce_product_description_heading', '__return_null' );
+
+
+add_theme_support('woocommerce');
+
+
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -187,3 +196,48 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// WOOOOOOO COMMERCE
+function charlie_salas_humara_theme_woocommerce_support(){
+    add_theme_support('woocommerce');
+}
+
+add_action('after_setup_theme', 'charlie_salas_humara_theme_woocommerce_support');
+
+
+// add_action( 'after_setup_theme', 'woocommerce_support' );
+// function woocommerce_suppoer() {
+// 	add_theme_support( 'woocommerce' );
+// }
+// // Change the product description title
+// add_filter('woocommerce_product_description_heading', 'change_product_description_heading');
+// function change_product_description_heading() {
+//  return __('NEW TITLE HERE', 'woocommerce');
+// }
+
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
+function woo_remove_product_tabs( $tabs ) {
+    unset( $tabs['description'] );          // Remove the description tab
+    unset( $tabs['reviews'] );          // Remove the reviews tab
+    unset( $tabs['additional_information'] );   // Remove the additional information tab
+    return $tabs;
+}
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+
+add_filter('add_to_cart_redirect', 'lw_add_to_cart_redirect');
+function lw_add_to_cart_redirect() {
+ global $woocommerce;
+ $lw_redirect_checkout = $woocommerce->cart->get_checkout_url();
+ return $lw_redirect_checkout;
+}
+
+function custom_wc_get_sale_price( $sale_price, $product ) {
+	return $product->get_regular_price(); 
+		return $sale_price;
+	}
+	add_filter( 'woocommerce_get_sale_price', 'custom_wc_get_sale_price', 50, 2 );
+	add_filter( 'woocommerce_get_price', 'custom_wc_get_sale_price', 50, 2 );
+
+	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );

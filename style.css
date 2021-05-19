@@ -65,7 +65,7 @@ p {
 }
 
 .headerText {
-	color:rgb(170, 163, 163)
+	color:rgb(170, 163, 163);
 }
 
 #subheader {
@@ -77,6 +77,10 @@ p {
 }
 
 
+
+
+
+
 .myGallery {
 	display: grid;
 	grid-gap: 10px;
@@ -86,6 +90,10 @@ p {
   
   .myGallery img {
 	width: 100%;
+  }
+
+  img {
+    height: auto;
   }
   
 
@@ -107,7 +115,7 @@ p {
     padding: 1em;
     position: absolute;
     z-index: 1;
-    top: -49px;
+    top: -55px;
     left: 0;
     width: 100%;
     max-height: 100%;
@@ -146,10 +154,11 @@ p {
   
   .columnOne {
     flex: 70%;
+    padding: 20px;
   }
   .columnTwo {
     flex: 30%;
-    padding: 20px 20px 0 0;
+    padding: 20px;
     line-height: 1;
   }
 
@@ -181,7 +190,107 @@ p {
     color: whitesmoke;
   }
 
+  /* CONTACT PAGE */
+
+  #contactWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 100px 0 100px;
+  }
+
+
+  .contactHeader {
+
+  }
+
+  .contactBody {
+
+  }
+
+  .contactDetails {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .contactImage {
+    width: 40%;
+  }
+
+  .contactImageWrapper {
+    text-align: center;
+  }
+
+  /* NAVIGATION */
+
+  .navRightColumn {
+    right: 20px;
+    top: 60px;
+    position: absolute;
+  }
+
+  .cartIcon {
+    /* right: 20px;
+    top: 60px;
+    position: absolute; */
+    right: 10px;
+    top: 10px;
+    position: absolute;
+  }
+
+  .contactLink {
+    /* right: 45px;
+    top: 70px;
+    position: absolute; */
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .contactLinkText {
+    font-size: 17px!important;
+    color:rgb(170, 163, 163);
+    transition: 0.3s;
+    text-decoration: none!important;
+    right: 50px;
+    position: absolute;
+  }
+
+  .contactLinkText:hover {
+    color:rgb(170, 163, 163, .2);
+    text-decoration: none!important;
+  }
+
+  .fas {
+    color:rgb(170, 163, 163);
+  }
+
+  .fas:hover {
+    color:rgb(170, 163, 163, .2);
+  }
+
   @media only screen and (max-width: 600px) {
+    #header {
+      height: 50px;
+      /* margin-top: 5px!important; */
+    }
+    .headerText {
+      font-size: 30px;
+      margin-top: 5px!important;
+      padding-right: 28px;
+    }
+
+    .myGallery {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      margin-bottom: 150px;
+    }
+    .caption {
+      display: none;
+    }
 
     .row {
       display: flex;
