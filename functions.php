@@ -241,3 +241,15 @@ function custom_wc_get_sale_price( $sale_price, $product ) {
 	add_filter( 'woocommerce_get_price', 'custom_wc_get_sale_price', 50, 2 );
 
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+	function quantity_wp_head() {
+   
+		if ( is_product() ) {
+			?>
+		<style type="text/css">.quantity, .buttons_added { width:0; height:0; display: none; visibility: hidden; }</style>
+		<?php
+			}
+		}
+			add_action( 'wp_head', 'quantity_wp_head' );
+
+			

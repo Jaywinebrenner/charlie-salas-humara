@@ -231,18 +231,9 @@ p {
   }
 
   .cartIcon {
-    /* right: 20px;
-    top: 60px;
-    position: absolute; */
     right: 10px;
     top: 10px;
     position: absolute;
-  }
-
-  .contactLink {
-    /* right: 45px;
-    top: 70px;
-    position: absolute; */
   }
 
   a {
@@ -328,5 +319,59 @@ p {
     p, button, h4 {
       margin: 5px!important;
     }
+    .col2-set {
+      padding: 0!important;
+    }
+    
+    #order_review_heading {
+      padding: 10px 0 30px 10px;
+    }
+    
+    #order_review {
+      padding: 0!important;
+    }
+    .headerText {
+      font-size: 20px;
+    }
   
   }
+
+  /* ADD TO CART BUTTON */
+
+  
+/* "Add to cart" button on single product page */
+.single_add_to_cart_button {
+  background-color: rgba(0, 0, 0, 0.7)!important;
+  color: #FFFFFF!important;
+  transition: 0.3s;
+}
+/* "Add to cart" button on archives (e.g. shop, category page) */
+.single_add_to_cart_button:hover {
+  background-color: rgba(0, 0, 0, 0.2)!important;
+  color: #FFFFFF!important;
+}
+
+/* CHECKOUT PAGE */
+
+.woocommerce-additional-fields {
+  display: none;
+}
+
+.col2-set {
+  padding: 0 10%;
+}
+
+#order_review_heading {
+  padding: 10px 0 30px 0;
+}
+
+#order_review {
+  padding: 0 11.5%;
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+  background: #fafafa!important;;
+  padding: .5rem;
+  border: 1px solid rgba(0, 0, 0, 0.7)!important;
+  border-radius: 3px;
+}
