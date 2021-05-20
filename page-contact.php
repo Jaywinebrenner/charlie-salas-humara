@@ -22,6 +22,7 @@ $image = get_field('contact_image');
     </a>
     <p class="contactBody"><?php echo $body?></p>
     <p class="contactDetails"><?php echo $details?></p>
+    <a class="socialIconAnchor" href="https://www.instagram.com/charliesalashumaraart" target="_blank"><i class="fab fa-instagram-square fa-2x socialIcon"></i></a>
 
 
 </div>

@@ -17,22 +17,31 @@ get_header();
     $loop = new WP_Query(array('post_type' => 'product', 
       'orderby' => 'post_id', 
       'order' => 'ASC',
-
     )); 
 ?>
+
+
+<!-- PRODUCT DESCRIPTION SYNTAX -->
+
+
+
 
 <?php if ($loop ->have_posts()) : while ($loop ->have_posts()) : $loop ->the_post(); ?>
 
     <div class="item">
+		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $loop->post->ID ), 'single-post-thumbnail' );?>
 
-    <?php
-    $product_image = get_post($item['product_id'])->post_content; 
-    ?>
+		
+
+
+	<?php
+    $product_short_description = get_post($item['product_id'])->post_content; 
+	?> 
 
 
     <a href="<?php the_permalink(); ?>">
-       <?php echo $product_image ?> 
-        <span class="caption"><?php the_excerpt(); ?></span>
+	<img src="<?php  echo $image[0]; ?>" data-id="<?php echo $loop->post->ID; ?>">
+        <span class="caption"><?php echo $product_short_description?></span>
     </a>
     </div>
 

@@ -34,10 +34,9 @@ if ( post_password_required() ) {
 <div >
 <div class="row" id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 	<div class="columnOne">
-		<?php
-		$product_image = get_post($item['product_id'])->post_content; 
-		?>
-		<?php echo $product_image ?> 
+	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $loop->post->ID ), 'single-post-thumbnail' );?>
+
+	<img src="<?php  echo $image[0]; ?>" data-id="<?php echo $loop->post->ID; ?>">
 	</div>
 
 
@@ -71,6 +70,8 @@ if ( post_password_required() ) {
 		 */
 		do_action( 'woocommerce_single_product_summary' );
 		?>
+		<a class="socialIconAnchor" href="<?php echo get_page_link( get_page_by_title( 'Shop' )->ID ); ?>"><i class="fas fa-arrow-left fa-3x"></i></a>
+
 	</div>
 
 	<?php
@@ -85,4 +86,9 @@ if ( post_password_required() ) {
 	?>
 </div>
 
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+
+
+
+<div id="footer">
+    <h5>Some text maybe?</h5>
+</div>

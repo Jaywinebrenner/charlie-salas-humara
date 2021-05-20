@@ -242,14 +242,28 @@ function custom_wc_get_sale_price( $sale_price, $product ) {
 
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
-	function quantity_wp_head() {
-   
-		if ( is_product() ) {
-			?>
-		<style type="text/css">.quantity, .buttons_added { width:0; height:0; display: none; visibility: hidden; }</style>
-		<?php
-			}
-		}
-			add_action( 'wp_head', 'quantity_wp_head' );
+function quantity_wp_head() {
 
+	if ( is_product() ) {
+		?>
+	<style type="text/css">.quantity, .buttons_added { width:0; height:0; display: none; visibility: hidden; }</style>
+	<?php
+		}
+	}
+	add_action( 'wp_head', 'quantity_wp_head' );
+
+
+	function sw_delete_remove_product_notice(){
+		$notices = WC()->session->get( 'wc_notices', array() );
+		if(isset($notices['success'])){
+			for($i = 0; $i < count($notices['success']); $i++){
+				if (strpos($notices['success'][$i], __('removed','woocommerce')) !== false) {
+					array_splice($notices['success'],$i,1);
+				}
+			}
+			WC()->session->set( 'wc_notices', $notices['success'] );
+		}
+	}
+	
+	add_action( 'woocommerce_before_shop_loop', 'sw_delete_remove_product_notice', 5 );
 			
