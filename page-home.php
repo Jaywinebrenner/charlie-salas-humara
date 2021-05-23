@@ -19,10 +19,6 @@ $hovered_text = get_field('hovered_text');
   
 </body>
 
-
-<?php
-get_footer();
-?>
 <script src="<?php bloginfo('template_directory')?>/assets/js/jquery-3.5.1.min.js"></script>
 <script src="<?php bloginfo('template_directory')?>/assets/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo('template_directory')?>/assets/js/main.js"></script>

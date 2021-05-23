@@ -25,6 +25,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <h1 class="cartHeader">CART</h1>
 
+
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
@@ -173,10 +174,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 		do_action( 'woocommerce_cart_collaterals' );
 	?>
 </div>
-
+<!-- <a class="continueToCheckoutButton" href="<?php echo get_page_link( get_page_by_title( 'Checkout' )->ID ); ?>">
+	<h5>Continue to Checkout</h5>
+</a> -->
+<form class="continueToCheckoutWrapper" action="<?php echo get_page_link( get_page_by_title( 'Checkout' )->ID ); ?>">
+	<button class="single_add_to_cart_button button alt">Continue to Checkout</button>
+</form>
 <?php do_action( 'woocommerce_after_cart' ); ?>
 
-<div id="footer">
-    <h5>Some text maybe?</h5>
-</div>
+<?php get_footer(); ?>
 

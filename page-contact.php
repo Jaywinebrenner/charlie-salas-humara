@@ -27,9 +27,7 @@ $image = get_field('contact_image');
 
 </div>
 
-<div id="footer">
-    <h5>Some text maybe?</h5>
-</div>
+<?php get_footer(); ?>
 
 
 <script src="<?php bloginfo('template_directory')?>/assets/js/jquery-3.5.1.min.js"></script>

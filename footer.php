@@ -11,10 +11,9 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<div id="footer">
+    <h5 class="footerText">Some text maybe????????</h5>
+</div>
 
 <?php wp_footer(); ?>
 

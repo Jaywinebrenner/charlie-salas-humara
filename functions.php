@@ -266,4 +266,27 @@ function quantity_wp_head() {
 	}
 	
 	add_action( 'woocommerce_before_shop_loop', 'sw_delete_remove_product_notice', 5 );
-			
+
+
+
+
+	remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 20);
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+
+
+
+
+
+//  THis wraps the Product Image in a DIV
+
+add_action( 'woocommerce_before_shop_loop_item_title', function(){
+    echo '<div class="productImageWrapper">';
+}, 9 );
+add_action( 'woocommerce_before_shop_loop_item_title', function(){
+    echo '</div>';
+}, 11 );
+
+
+
+

@@ -89,6 +89,4 @@ if ( post_password_required() ) {
 
 
 
-<div id="footer">
-    <h5>Some text maybe?</h5>
-</div>
+<?php get_footer(); ?>
