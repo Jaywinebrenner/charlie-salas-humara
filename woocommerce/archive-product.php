@@ -15,6 +15,9 @@
  * @version 3.4.0
  */
 
+
+
+
 defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
@@ -27,8 +30,13 @@ get_header( 'shop' );
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
 do_action( 'woocommerce_before_main_content' );
-
+$shop_subheader = get_field('shop_subheader', 97);
 ?>
+
+<div id="subheader">
+    <h5><?php echo $shop_subheader?></h5>
+</div>
+
 <header class="woocommerce-products-header">
 
 
@@ -42,7 +50,10 @@ do_action( 'woocommerce_before_main_content' );
 	// do_action( 'woocommerce_archive_description' );
 	?>
 </header>
+
+
 <?php
+
 if ( woocommerce_product_loop() ) {
 
 	/**

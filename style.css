@@ -30,8 +30,8 @@ p {
 }
 
 .landingImage {
-	width: 60vw;
-	max-height: 90vh;
+  max-width: 500px;
+	/* max-height: 90vh; */
 }
 
 .landingImage:hover {
@@ -282,6 +282,10 @@ p {
   }
 
   @media only screen and (max-width: 600px) {
+    .landingImage {
+      max-width: 300px;
+      /* max-height: 90vh; */
+    }
     .continueToCheckoutWrapper {
       margin-bottom: 100px!important;
     }
@@ -482,6 +486,7 @@ input[name='update_cart'] {
 
 .footerText {
   color: rgb(170, 163, 163);
+  font-size: x-small;
 }
 
 .continueToCheckoutButton {
@@ -600,4 +605,23 @@ button .wc-backward {
 
 .cart button {
   background-color: purple;
+}
+
+.shippingNoticeWrapper p {
+  text-align: center;
+    padding: 0 10%;
+}
+
+.shippingNoticeWrapper p span{
+  color: red;
+  font-size: 20px;
+}
+
+
+.wcs-nux__notice  {
+display: none;
+}
+
+.columnOne img{
+  margin-bottom: 60px;
 }

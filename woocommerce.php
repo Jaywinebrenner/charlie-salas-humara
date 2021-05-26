@@ -3,7 +3,7 @@
 
 <?php 
 get_header();
-get_template_part('template-parts/content', 'navbar');
+get_template_part('template-parts/content', 'navbar', get_field('subheader'));
 if ( is_singular( 'product' ) ) {
     woocommerce_content();
    }else{
@@ -13,3 +13,4 @@ if ( is_singular( 'product' ) ) {
    }
 
 ?>
+

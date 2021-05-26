@@ -288,5 +288,10 @@ add_action( 'woocommerce_before_shop_loop_item_title', function(){
 }, 11 );
 
 
-
+add_filter('woocommerce_get_availability', 'availability_filter_func');
+function availability_filter_func($availability)
+{
+$availability['availability'] = str_ireplace('Out of stock', 'Sold', $availability['availability']);
+return $availability;
+}
 

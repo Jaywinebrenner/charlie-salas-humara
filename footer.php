@@ -9,10 +9,11 @@
  * @package Charlie_Salas-Humara_Theme
  */
 
+
 ?>
 
 <div id="footer">
-    <h5 class="footerText">Some text maybe????????</h5>
+    <h5 class="footerText">Charlie Salas-Humara© 2021</h5>
 </div>
 
 <?php wp_footer(); ?>

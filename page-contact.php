@@ -3,7 +3,6 @@
     Template Name: Contact Page
 */
 
-// THIS IS A TEST. THE FUNCTIONING OLD CODE IS IN GMAIL DRAFTS
 
 get_header();
 get_template_part('template-parts/content', 'navbar');
@@ -12,6 +11,7 @@ $header = get_field('contact_header');
 $body = get_field('contact_body');
 $details = get_field('contact_details');
 $image = get_field('contact_image');
+
 ?>
 
 
